@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div id="app">
+            <div class="header">
+                <h3>Hannah News</h3>
+            </div>
+            <div class="main">
+                <div class="commentbox">
+                    <ul class="commentList" id="commentList">
+                        <li v-for="message in messageList" class="comment">
+                            <div class="circle"></div>
+                            <div class="commentInfo">
+                                <p>{{message.senderName}}</p>
+                                <p>{{message.message}}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="sendComment">
+                        <input type="text" class="commentInput" id="commentInput" placeholder="Type something..." v-model="newMessage"/>
+                        <i class="fa fa-paper-plane" style="font-size:18px;" v-on:click="sendMessage"></i>
+                    </div>
+                </div>
+                <div class="newsfeed" v-if="showShortList">
+                    <h2>Breaking News: Horse in a Hospital</h2>
+                    <div v-for="newsitem in newsList.slice(0, 3)" class="newsarticle">
+                        <h4 class="newsarticleheader">{{newsitem.title}}</h4>
+                        <p class="newssnippet">{{newsitem.snippet}}</p>
+                        <p class="newsoutlet">{{newsitem.newsoutlet}}</p>
+                        <p class="newitemtime">{{newsitem.time}}</p>
+                    </div>
+                    <div class="showMoreLess" v-on:click="showTheWholeList">
+                        <p>Show More</p>
+                        <i class="fa fa-chevron-down" style="font-size:18px; color: #770B0B;" ></i>
+                    </div>
+
+                </div>
+                <div class="newsfeed" v-if="showWholeList">
+                    <h2>Breaking News: Horse in a Hospital</h2>
+                    <div class="showMoreLess" v-on:click="showTheShortList">
+                            <i class="fa fa-chevron-up" style="font-size:18px; color: #770B0B;"></i>
+                            <p>Show Most Recent</p>
+                        </div>
+                    <div v-for="newsitem in newsList" class="newsarticle">
+                        <h4 class="newsarticleheader">{{newsitem.title}}</h4>
+                        <p class="newssnippet">{{newsitem.snippet}}</p>
+                        <p class="newsoutlet">{{newsitem.newsoutlet}}</p>
+                        <p class="newitemtime">{{newsitem.time}}</p>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+</html>
