@@ -32,6 +32,14 @@ body {
     margin-top: 110px;
 }
 
+.xButton {
+    z-index: 5;
+    position: fixed;
+    right: 15%;
+    font-size: 21px;
+    font-weight: bold;
+}
+
 .commentbox {
     display: grid;
     grid-template-rows: repeat(12, 1fr);
@@ -69,9 +77,6 @@ body {
     margin-right: 25px;
 }
 
-.commentInfo {
-
-}
 .commentInfo p {
     margin: 0px;
 }
@@ -122,10 +127,6 @@ body {
     margin: 5px 0px;
 }
 
-.newssnippet {
-
-}
-
 .newsoutlet {
     font-weight: bold;
     color:#770B0B;
@@ -140,6 +141,7 @@ body {
 
 }
 
+
 .showMoreLess {
     width: 100%;
     display: flex;
@@ -149,4 +151,35 @@ body {
 .showMoreLess p {
     color: #770B0B;
     margin-bottom: 0px;
+}
+
+.showchatbubble {
+    color: white;
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
+    background-color: #770b0b;
+    height: 50px;
+    width: 100px;
+    border-radius: 50%;
+    line-height: 30px;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    box-shadow: 5px 5px 1px #4545;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+
+    .commentbox {
+        width: 85%;
+        background-color: white;
+    }
+
+    .newsfeed {
+        grid-column: 2/15;
+    }
+
 }
