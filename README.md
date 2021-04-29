@@ -7,4 +7,4 @@ The server, hosted on Heroku, posts randomly generated posts at random times. Th
 
 Each client randomly generates comments that are sent to the server and broadcast to everyone. The more clients there are, the more comments go out.
 
-![Screenshot of homepage](https://github.com/HannahRipley17/hospitalhorse/blob/main/img/hospitalhorsescreenshot.png?raw=true)
+![Screenshot of homepage](https://github.com/HannahRipley17/horseinhospital/blob/master/hospitalhorsescreenshot.png)
